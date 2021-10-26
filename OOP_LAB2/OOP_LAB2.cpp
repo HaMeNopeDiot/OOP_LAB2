@@ -1,7 +1,6 @@
-﻿#include <iostream>
-#include "OOP_L2.h"
+﻿#include "OOP_L2.h"
+#include <iostream>
 #include <Windows.h>
-#include <fstream>
 
 void menu();
 Fractional inputNum();
@@ -10,7 +9,7 @@ int main()
 {
     SetConsoleOutputCP(1251);
     int choise;
-    std::cout << "Введите 1 число:"; //0.0001        *10000 ->round
+    std::cout << "Введите 1 число:";
     Fractional First = inputNum();
     std::cout << "Введите 2 число:";
     Fractional Second = inputNum();
@@ -50,23 +49,23 @@ int main()
         {
             //a==b
             if (First == Second)
-                std::cout << "A equal B" <<'\n';
+                std::cout << "A equal B";
             else
-                std::cout << "A not equal B" << '\n';
+                std::cout << "A not equal B";
         }break;
         case 6:
         {
-            if (First < Second)
-                std::cout << "Yes" << '\n';
+            if (First > Second)
+                std::cout << "A>B";
             else
-                std::cout << "No" << '\n';
+                std::cout << "A<=B";
         }break;
         case 7:
         {
-            if (First > Second)
-                std::cout << "Yes" << '\n';
+            if (First < Second)
+                std::cout << "A<B";
             else
-                std::cout << "No" << '\n';
+                std::cout << "A>=B";
         }break;
         case 8:
         {
@@ -101,6 +100,11 @@ int main()
             std::cout << "Некорректный ввод!"<<'\n';
         }break;
         }
+        std::cout << "-----------------------" << '\n';
+        First.output();
+        Second.output();
+        Result.output();
+        std::cout << "-----------------------" << '\n';
 
     } while (choise != 14);
     return 0;
@@ -108,9 +112,8 @@ int main()
 
 Fractional inputNum()
 {
-    float realNum; //2.53 -> 2 53 //0.0001        *10000 ->round
+    double realNum; //2.53 -> 2 53
     std::cin >> realNum;
-    float accurNum = round(realNum * 10000)*1.0 / 10000;
     Fractional* S = new Fractional;
     return S->getRealNumberReverse(realNum);
 }
