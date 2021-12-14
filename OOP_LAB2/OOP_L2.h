@@ -43,7 +43,7 @@ public:
 	bool operator> (Fractional& OtherObject);
 
 	void output();
-
+	std::string toString();
 };
 
 

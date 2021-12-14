@@ -208,19 +208,21 @@ void Fractional::output()
 
 std::ostream& operator<<(std::ostream& out, const Fractional& obj)
 {
+	Fractional S(*obj.wholePart, *obj.fractPart);
+	std::cout << "\nRealNum:" << S.getRealNumber(S) << "\n";
 	out << "Whole:" << *obj.wholePart << "\nFract:" << *obj.fractPart;
 
 	return out;
 }
 std::istream& operator>> (std::istream& in, const Fractional& obj)
 {
-	std::cout << "\nWhole:";
+	std::cout << "Whole:";
 	in >> *obj.wholePart;
-
 	std::cout << "\nFract:";
 	in >> *obj.fractPart;
 	std::cout << '\n';
 	return in;
 }
+
 
 //65535

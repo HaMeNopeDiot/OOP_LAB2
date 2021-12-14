@@ -139,10 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="OOP_LAB2.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="OOP_L2.cpp" />
+    <ClCompile Include="Calculator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Calculator.h" />
     <ClInclude Include="OOP_L2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
